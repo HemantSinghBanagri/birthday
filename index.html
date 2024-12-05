@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="styles.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap"
+         rel="stylesheet"
+      />
+      <title>Birthday Gift Site</title>
+   </head>
+   <body>
+      <!-- Birthday Header -->
+      <div class="header" id="birthdayHeader">
+         <h1 id="birthdayName"></h1>
+         <img id="birthdayImage" src="" alt="Birthday Image" class="avatar" />
+         <h2 class="age" id="birthdayAge"></h2>
+         <h4 class="date" id="birthdayDate"></h4>
+      </div>
+
+      <!-- Play Audio Button -->
+      <div class="audio-container">
+         <button id="playAudioButton" onclick="playAudio()">Play Birthday Song 🎵</button>
+      </div>
+
+      <!-- Gift Sections -->
+      <div class="gift-section">
+         <h2 class="gift-title">Here's how happy I am for you today 🥳</h2>
+         <h3 class="gift-hint">(Hover over the gift)</h3>
+         <div class="happy-gif gift-cover"></div>
+      </div>
+
+      <div class="gift-section">
+         <h2 class="gift-title">How people react when you enter the room 😍</h2>
+         <div class="respect-gif gift-cover"></div>
+      </div>
+
+      <div class="gift-section">
+         <h2 class="gift-title">If I had to describe you with ONE word 👇</h2>
+         <div class="genius-gif gift-cover"></div>
+      </div>
+
+      <div class="gift-section">
+         <h2 class="gift-title">How You see When you get angery 💪</h2>
+         <div class="goat-gif gift-cover"></div>
+      </div>
+
+      <div class="gift-section">
+         <h2 class="gift-title">This one's for you, Hope you like it !👊</h2>
+         <div class="cheers-gif gift-cover"></div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+         <p>Happy Birthday! 🎉</p>
+      </div>
+
+      <audio id="birthdayAudio" src="./happybirthday.mp3" preload="auto"></audio>
+
+      <script>
+         function displayBirthday() {
+            const name = "Sharmila";
+            const age = 22;
+            const dob = "2002-12-06";
+            const picture = "./sharmila.jpeg";
+
+            // Set birthday details
+            document.getElementById("birthdayName").textContent = `Today is ${name}'s Birthday`;
+            document.getElementById("birthdayAge").textContent = `${age} years old`;
+            document.getElementById("birthdayDate").textContent = new Date(dob).toLocaleDateString();
+            document.getElementById("birthdayImage").src = picture;
+         }
+
+         function playAudio() {
+            const audio = document.getElementById("birthdayAudio");
+            audio.play();
+         }
+
+         // Display the birthday content automatically on page load
+         document.addEventListener("DOMContentLoaded", displayBirthday);
+      </script>
+   </body>
+</html>
